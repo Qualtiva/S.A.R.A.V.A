@@ -1,11 +1,11 @@
 /**
- * Anai.cpp: define el punto de entrada de la aplicación de consola.
- * Sistema de asignación y reservación para asientos para vuelos aéreos
- *
- * Codigos
- * Asiento vacio = 0
- * Asiento reservado = 1
- * Asiento confirmado = 2
+* Anai.cpp: define el punto de entrada de la aplicacion de consola.
+* Sistema de asignacion y reservacion para asientos para vuelos aereos
+*
+* Codigos
+* asiento vacio = 0
+* asiento reservado = 1
+* asiento confirmado = 2
 */
 
 #include "stdafx.h"
@@ -13,8 +13,12 @@
 #include <conio.h>
 #include <stdlib.h>
 
+#ifdef _MSC_VER
+#define getch() _getch()
+#endif
+
 using namespace std;
-int main()
+int main(void)
 {
 	int avion = 0, clase = 0, asiento = 0, m = 0, avion1[60], avion2[60], avion3[60], i;
 	char opcion;
@@ -25,7 +29,7 @@ int main()
 	for (i = 0; i<60; i++)
 		avion3[i] = 0;
 	cout << "TODOS LOS ASIENTOS ESTAN DISPONIBLES....";
-	system("pause");//espera a que presiones una tecla y termina 
+	getch();//espera a que presiones una tecla y termina 
 	do
 	{
 		system("cls");
@@ -169,7 +173,7 @@ int main()
 
 			break;
 		case '4':
-			cout << "\nQue avionion Desea Verificar avionion 1, avionion 2 o avionion 3:";
+			cout << "\nQue avion Desea Verificar avion 1, avion 2 o avion 3:";
 			cin >> avion;
 			cout << "\nQue Desea Verificar:""\n""1-Reservas""\n""2-Reservas Confirmadas""\n""3-Asientos Vacios""\n""Eliga La Opcion a Verificar: ";
 			cin >> m;
@@ -267,9 +271,9 @@ int main()
 		default:
 			cout << "\n  ";
 		}
-		system("pause");//espera a que presiones una tecla y termina 
+		getch();//espera a que presiones una tecla y termina 
 	} while (opcion != '5');
 	cout << "\nHa Decidido Salir Del Menu...";
-	system("pause");//espera a que presiones una tecla y termina 
+	getch();//espera a que presiones una tecla y termina 
 	return 0;
 }
